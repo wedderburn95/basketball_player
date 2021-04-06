@@ -10,7 +10,8 @@ class CLI
 
     def greet(name)
         puts "Greetings #{name}!
-        which team would you like to see?"
+        enter y to see team names" 
+        menu
     end
 
     def user_input
@@ -19,9 +20,42 @@ class CLI
 
     def menu
         selection = user_input
-        if selection == "team_name"
-        #enter team go to team list
-        elsif
-        #enter player go to player list
+        if selection == "y"
+       print_team
+        elsif selection == "exit"
+            #exit selection            
+        else
+            #invalid message
+        end
+        
     end
+
+    def team_name
+        team = ["Brooklyn Nets, Golden State Warriors, Los Angeles Clippers, Los Angeles Lakers, Miami Heat, Milwaukee Bucks, New Orleans Pelicans, Philadelphia 76ers"]
+            puts 
+    end
+
+    def team_player
+        player = []
+
+    end
+
+    def goodbye
+        puts "Thank you for visiting have a great day!"
+    end
+
+    def print_team
+        team = [team]
+        team.each.with_index do |team, index|
+            puts "#{index}, #{team}"
+        end
+    end
+
+    def print_player
+        player =[]
+        player.each.with_index(1) do |player, index|
+            puts "#{index}, #{player}"
+        end
+    end
+
 end
