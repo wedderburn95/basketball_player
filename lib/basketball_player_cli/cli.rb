@@ -9,8 +9,7 @@ class CLI
     end
 
     def greet(name)
-        puts "Greetings #{name}!
-        enter y to see team names" 
+        puts "Greetings #{name}! enter y to see team names" 
         menu
     end
 
@@ -21,41 +20,52 @@ class CLI
     def menu
         selection = user_input
         if selection == "y"
-       print_team
+       team_name
         elsif selection == "exit"
-            #exit selection            
-        else
+        else            #exit selection            
+
             #invalid message
         end
         
     end
 
     def team_name
-        team = ["Brooklyn Nets, Golden State Warriors, Los Angeles Clippers, Los Angeles Lakers, Miami Heat, Milwaukee Bucks, New Orleans Pelicans, Philadelphia 76ers"]
-            puts 
+        teams = ["Brooklyn Nets", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Miami Heat", "Milwaukee Bucks"]
+        # teams = Team.all
+        teams.each.with_index(1) do |t, i|
+            puts "#{i}. #{t}"
+        end   
+        puts "Enter team name to see the players"
+        players = user_input
+        team_player(players)
     end
 
-    def team_player
-        player = []
 
+    def team_player(players)
+        puts players
+        players = ["Kevin Durant", "Steven Curry", "Kawhi Leonard", "Lebron James", "Jimmy Butler", "Giannis Antetokounmpo"]
+        # # player = Player.all
+        players.each.with_index(1) do |p, i|
+            puts "#{i}. #{p}"
+        end
     end
 
     def goodbye
         puts "Thank you for visiting have a great day!"
     end
 
-    def print_team
-        team = [team]
-        team.each.with_index do |team, index|
-            puts "#{index}, #{team}"
-        end
-    end
+    # def print_team
+    #     team = [team]
+    #     team.each.with_index do |team, index|
+    #         puts "#{index}, #{team}"
+    #     end
+    # end
 
-    def print_player
-        player =[]
-        player.each.with_index(1) do |player, index|
-            puts "#{index}, #{player}"
-        end
-    end
+    # def print_player
+    #     player =[]
+    #     player.each.with_index(1) do |player, index|
+    #         puts "#{index}, #{player}"
+    #     end
+    # end
 
 end
