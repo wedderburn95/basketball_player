@@ -1,18 +1,11 @@
 class Basketball
-    attr_accessor :name, :city, :team, :conference, :division
+    attr_accessor :name, :city, :conference, :division
     @@all = []
 
     def initialize(basketball_hash)
         basketball_hash.each do |key, value| # looping through the value
         self.send("#{key}=", value) if self.respond_to?("#{key}=") #loads the value into the basketball class
-        # if !@@all.include?(value)
-        
-        # end
-        
         end
-        # @name = self.name["name"]
-        # @team = self.team["team"]
-     
         save
     end
 
@@ -33,23 +26,3 @@ class Basketball
         end
     end
 end
-
-# class Player
-#     attr_accessor :name, :team, :position
-#     @@all =[]
-
-#     def initialize(id, name, team)
-#         @id = id
-#         @name = name
-#         @team = team
-#         # save
-#     end
-
-#     def save
-#         @@all << self
-#     end
-
-#     def self.all
-#         @@all.uniq
-#     end
-# end
