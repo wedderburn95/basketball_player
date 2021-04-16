@@ -9,9 +9,6 @@ class Basketball
         save
     end
 
-    def find_by
-    end
-
     def save
         @@all << self
     end
