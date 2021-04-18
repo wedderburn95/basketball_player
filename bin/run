@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby #Shebang It tells the program loader what command to use to execute the file.
 
 require_relative '../lib/environment.rb'
 # cli = CLI.new
